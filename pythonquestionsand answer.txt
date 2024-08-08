@@ -1,0 +1,212 @@
+Python Questions
+1. As a python programmer in a company, develop a program that
+counts the letters in the first name of people. If the length of the name is
+greater than or equal to 10, print ‘your name is more than 10 letters’, else if the name is between 5 and 10 words print ‘your name is not so
+long’, else if the name is less than 5 print ‘the name is too short’. 2. Write a simple function to determine the area of a circle. Use the pi in
+math module. 3. Write a Python program to find the largest element in a list. Do not use
+the max method for this question. E.g in the list [43,21,53,16,13,31,22], 53 is the highest. 4. Write a Python program to find the smallest element in a list. Do not
+use the min method for this question. E.g in the list
+[43,21,53,16,13,31,22], 13 is the highest. 5. Write a Python program to check if a number is even. 6. A = [‘shola’, ‘susan’, ‘bolu’,’tola’,’wunmi’, ‘aishat’,’fatimah’,’grace’]
+B = [‘peter’,’paul’,’fatimah’,’wunmi’, ,’yomi’, ‘aishat’]
+Write a Python program to find the common elements between
+the two lists, put them in a new list called C and print them out. 7. Write a Python program to remove duplicates from a list. Do not use
+set as a shortcut, instead write a well detailed program. E.g we have a list A [1,4,2,6,2,7,2,8,5,3,4,5,3], ensure that we have a new
+list without the duplicates. 8. Write a Python program to find the list of words that are longer than 4
+from a given list of words
+E.g [‘shola’, ‘susan’, ‘bolu’,’tola’,’wunmi’, ‘aishat’,’fatimah’,’grace’]
+9. Using the random module, create a program that randomly guesses
+the qualification of people from a list
+[‘Msc’,’Bsc’,’Phd’,’B.Edu’,’B.Tech’,’B.doc’], remember to use the choice
+method in random module.
+10. Write a function that can recommend states of Nigeria to a user. For
+example, if a user types ‘A’, the code should return states like Abia, Anambra,Ado-ekiti, if the user types Ab then it should give Abia. Note
+that in your function, you should have a list that contains all 36 states in
+Nigeria and the list is constantly checked for when a user puts an input. Pseudocode for number 10
+def search_states()
+while True:
+Search = input(‘Enter the letter(s) you want to search: ’) …….
+
+
+
+
+
+
+
+
+
+#1
+name = input('what is your name? ')
+if len(name) >=10:
+    print('your name is greater than 10')
+elif len(name) >= 5 and len(name) <= 10:
+    print('your name is not so long' )
+elif len(name) <= 5 :
+    print('your name is so short')
+else:
+    print('nice name')
+
+#2
+from math import pi
+circle = lambda r: pi * r**2
+circle(2)
+
+#2
+from math import pi
+def areacircle(radius): 
+    area_circle = pi*radius**2
+    print(f'the area of the circle is {area_circle}')
+
+#2
+#2
+from math import pi
+def area_circle():
+    radius = float(input('Enter the radius of the circle '))
+    area_circle = pi*radius**2
+    print(f'the area of the circle is {area_circle}')
+
+#3
+list1 = [43,21,53,16,13,31,22]
+result = list1[0]
+for highest in list:
+    if highest >= result:
+        result = highest
+print (result)
+
+#4
+list1 = [43,21,53,16,13,31,22]
+result =list1[0]
+for lowest in list:
+    if lowest <= result:
+        result = lowest
+print (result)
+
+#5
+even_num = int(input("Enter a number"))
+if even_num %2 == 0:
+  print("this is an even number")
+else:
+  print("this is an odd number")
+
+
+
+#6
+A = ['shola', 'susan', 'bolu','tola','wunmi', 'aishat','fatimah','grace']
+B = ['peter','paul','fatimah','wunmi' ,'yomi', 'aishat']
+C = []
+for name in A:
+    if name in B:
+        C.append(name)
+print (C)
+
+#6
+A = ['shola', 'susan', 'bolu','tola','wunmi', 'aishat','fatimah','grace']
+B = ['peter','paul','fatimah','wunmi' ,'yomi', 'aishat']
+C = []
+for name in A:
+    for k in B:    
+        if name == k:
+            C.append(name)
+print (C)
+
+#6
+A = ['shola', 'susan', 'bolu','tola','wunmi', 'aishat','fatimah','grace']
+B = ['peter','paul','fatimah','wunmi' ,'yomi', 'aishat']
+
+new_A = set(A)
+new_B = set(B)
+intersect_result = new_A.intersection(new_B)
+print(list(intersect_result))
+
+union_result = new_A.union(new_B)
+print(list(union_result))
+
+
+#7
+A =[1,4,2,6,2,7,2,8,5,3,4,5,3]
+B =[]
+for number in A:
+    if number not in B:
+        B.append(number)
+print (B)
+
+# additional solution
+a = [1,4,2,6,2,7,2,8,5,3,4,5,3]
+c=[]
+d=[]
+for i in a:
+  if i not in c:
+    c.append(i)
+  elif i in c:
+    d.append(i)
+
+print(c)
+print(d)
+
+
+# additional solution
+a = [1,4,2,6,2,7,2,8,5,3,4,5,3]
+c=[]
+d=[]
+for i in a:
+  if i not in c:
+    c.append(i)
+  elif i in c  and i not in d:
+    d.append(i)
+
+print(c)
+
+
+
+#8
+A = ['shola', 'susan', 'bolu','tola','wunmi', 'aishat','fatimah','grace']
+for people in A:
+  if len(people) >4:
+    print(people)
+
+#9
+import random
+list1 =['Msc','Bsc','Phd','B.Edu','B.Tech','B.doc']
+random.choice(list1)
+
+#10
+def search_states(search):
+    search = search.lower()
+    all_states = ["Abia","Adamawa","Akwa Ibom","Anambra","Bauchi","Bayelsa","Benue","Borno",
+                     "Cross River","Delta","Ebonyi","Edo","Ekiti","Enugu","FCT - Abuja","Gombe",
+                     "Imo","Jigawa","Kaduna","Kano","Katsina","Kebbi","Kogi","Kwara","Lagos",
+                     "Nasarawa","Niger","Ogun","Ondo","Osun","Oyo","Plateau","Rivers","Sokoto","Taraba","Yobe","Zamfara"]
+    recommended_list = []
+    for states in all_states:
+        if states.lower().startswith(search):
+            recommended_list.append(states)
+    return(recommended_list)
+search = input('Enter the letter(s) you want to search:')
+result = search_states(search)
+print(result)
+
+#10
+def search_states(search):
+    #getting input
+    search = input('Enter the letter(s) you want to search:')
+    #storing list of states
+    all_states = ["Abia","Adamawa","Akwa Ibom","Anambra","Bauchi","Bayelsa","Benue","Borno",
+                     "Cross River","Delta","Ebonyi","Edo","Ekiti","Enugu","FCT - Abuja","Gombe",
+                     "Imo","Jigawa","Kaduna","Kano","Katsina","Kebbi","Kogi","Kwara","Lagos",
+                     "Nasarawa","Niger","Ogun","Ondo","Osun","Oyo","Plateau","Rivers","Sokoto","Taraba","Yobe","Zamfara"]
+    #creating empty list
+    recommended_list = []
+    #getting length of input
+    search_length = len(search)
+
+    for state in all_states:
+        if state[:search_length].lower() == search.lower():
+            recommended_list.append(state)
+    return recommended_list
+
+
+# run this in another line of code
+result = search_states(search)
+print('The results are shown below:')
+for i in result:
+  print(i)
+
